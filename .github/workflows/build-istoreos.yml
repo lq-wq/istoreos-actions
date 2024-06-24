@@ -83,13 +83,6 @@ jobs:
         sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* adoptopenjdk* mysql* php* mongodb* dotnet* moby* snapd* android* || true
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
-        echo "------------------------------- 清理 Git 缓存 -------------------------------"
-        git gc --aggressive --prune=all
-    - name: 清理编译缓存
-      working-directory: ${{ github.workspace }}/openwrt
-      run: |
-        rm -rf build_dir
-        rm -rf bin
     - name: 清理编译缓存
       run: |
         make clean    

@@ -86,6 +86,10 @@ jobs:
         echo "------------------------------- 清理 Git 缓存 -------------------------------"
         git gc --aggressive --prune=all
     - name: 清理编译缓存
+      working-directory: ${{ github.workspace }}/openwrt
+      run: |
+        make clean
+    - name: 清理编译缓存
       run: |
         make clean    
         echo "------------------------------- 设置工作目录及时区 -------------------------------"

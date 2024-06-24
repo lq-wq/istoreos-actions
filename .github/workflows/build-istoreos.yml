@@ -88,7 +88,8 @@ jobs:
     - name: 清理编译缓存
       working-directory: ${{ github.workspace }}/openwrt
       run: |
-        make clean
+        rm -rf build_dir
+        rm -rf bin
     - name: 清理编译缓存
       run: |
         make clean    

@@ -10,8 +10,6 @@ on:
         default: 'false'
   #schedule:
   # - cron: 0 16 * * *
-
- run cd openwrt/bin/targets/*/*
  
  cd openwrt
  rm -rf bin

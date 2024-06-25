@@ -11,6 +11,14 @@ on:
   #schedule:
   # - cron: 0 16 * * *
 
+ run cd openwrt/bin/targets/*/*
+ 
+ cd openwrt
+ rm -rf bin
+ echo "FIRMWARE=$PWD" >> $GITHUB_ENV
+ echo "::set-output name=status::success"
+ shell: /usr/bin/bash -e {0}
+
 env:
   REPO_URL: https://github.com/istoreos/istoreos
   # REPO_BRANCH: main

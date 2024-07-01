@@ -22,7 +22,7 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
-  GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
 
 jobs:
   build:

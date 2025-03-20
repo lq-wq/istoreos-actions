@@ -24,25 +24,29 @@ env:
   TZ: Asia/Shanghai
   GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
-jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        REPO_BRANCH:
-          # - main
+on:
+  workflow_dispatch:
+    inputs:
+      repo_branch:
+        description: '选择编译分支'
+        required: true
+        type: choice
+        options:
           - istoreos-22.03
-          # - istoreos-23.05
-        ARCHITECTURE:
-          #- rk33xx
-          #- rk35xx
+          - istoreos-24.10
+      architecture:
+        description: '选择设备架构'
+        required: true
+        type: choice
+        options:
           - x86
-        os:
+          - x86-alpha
+      os_version:
+        description: '选择编译环境'
+        required: true
+        type: choice
+        options:
           - ubuntu-22.04
-        include:
-          - REPO_BRANCH: istoreos-24.10
-            ARCHITECTURE: x86-alpha
-            os: ubuntu-22.04
 
       fail-fast: false
 

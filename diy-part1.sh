@@ -13,6 +13,16 @@
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
+# 添加自定义软件
+# git clone https://github.com/lq-wq/luci-app-quickstart.git package/luci-app-quickstart
+git clone https://github.com/sirpdboy/luci-app-lucky.git package/luci-app-lucky
+git clone -b main https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
+git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp      
+
+# 添加主题
+# git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+git clone https://github.com/sirpdboy/luci-theme-kucat.git package/luci-theme-kucat
+
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default

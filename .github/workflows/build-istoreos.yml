@@ -31,14 +31,6 @@ on:
   repository_dispatch:
   schedule:
     - cron: '0 16 * * *'
-
-jobs:
-  build:
-    runs-on: ${{ inputs.os_version || 'ubuntu-22.04' }}
-    timeout-minutes: 180
-    env:
-      BUILD_ARCH: ${{ inputs.architecture }}
-      REPO_BRANCH: ${{ inputs.repo_branch }}
           
 env:
   REPO_URL: https://github.com/istoreos/istoreos

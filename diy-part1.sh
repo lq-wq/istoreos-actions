@@ -13,11 +13,16 @@
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
+# 需要 golang 1.22.x 或最新版本 (修复了 OpenWrt 旧分支的 build)
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+
 # 添加自定义软件
 # git clone https://github.com/lq-wq/luci-app-quickstart.git package/luci-app-quickstart
 git clone https://github.com/sirpdboy/luci-app-lucky.git package/luci-app-lucky
 git clone -b main https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
 git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp      
+git clone https://github.com/sbwml/luci-app-alist package/alist
 
 # 添加主题
 # git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon

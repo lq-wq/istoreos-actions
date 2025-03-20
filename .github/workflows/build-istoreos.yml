@@ -10,8 +10,7 @@ on:
         default: 'false'
   schedule:
    - cron: 0 16 * * *
-on:
-  workflow_dispatch:
+
     inputs:
       repo_branch:
         description: '选择编译分支'
